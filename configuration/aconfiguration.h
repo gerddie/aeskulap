@@ -26,6 +26,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <config.h>
 
 #include "awindowlevel.h"
 
@@ -74,8 +75,6 @@ public:
 	
 	void set_encoding(const std::string& encoding);
 
-	bool get_windowlevel(const Glib::ustring& modality, const Glib::ustring& desc, WindowLevel& w);
-
 	bool get_windowlevel_list(const Glib::ustring& modality, WindowLevelList& list);
 
 	bool set_windowlevel(const WindowLevel& w);
@@ -89,9 +88,15 @@ protected:
 	Configuration();
 
 private:
+        bool get_windowlevel(const Glib::ustring& modality, const Glib::ustring& desc, WindowLevel& w);
+	
 
 	// internal helper (backend independend) functions
 	Glib::ustring get_name_from_path(const Glib::ustring& path);
+
+#ifdef HAVE_GSETTINGS
+        struct ConfigurationImpl *impl;
+#endif
 
 };
 

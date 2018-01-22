@@ -22,6 +22,7 @@
 #include <gconfmm.h>
 #include <cstdio>
 #include <iostream>
+#include "aconfiguration.h"
 
 namespace Aeskulap {
 

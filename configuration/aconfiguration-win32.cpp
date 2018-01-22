@@ -24,6 +24,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include "aconfiguration.h"
 
 
 namespace Aeskulap {

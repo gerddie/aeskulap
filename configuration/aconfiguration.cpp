@@ -21,6 +21,7 @@
 
 #include "aconfiguration.h"
 #include "gettext.h"
+#include <config.h>
 
 namespace Aeskulap {
 
@@ -65,19 +66,4 @@ Glib::ustring Configuration::get_name_from_path(const Glib::ustring& path) {
 }
 
 } // namespace Aeskulap
-
-
-#ifdef WIN32
-
-// WIN32 configuration backend
-
-#include "aconfiguration-win32.cpp"
-
-#else
-
-// gconf configuration backend
-
-#include "aconfiguration-gconf.cpp"
-
-#endif
 
